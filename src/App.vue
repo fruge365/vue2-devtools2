@@ -31,29 +31,10 @@ export default {
     Music,
     BackTop,
   },
-  methods: {
-    showProgress() {
-      let progress = 0;
-      const interval = setInterval(() => {
-        progress += 10;
-        console.clear();
-        console.log(
-          `Progress: [${"=".repeat(progress / 10)}${" ".repeat(
-            10 - progress / 10
-          )}] ${progress}%`
-        );
-        if (progress >= 100) {
-          clearInterval(interval);
-          console.log("Task completed!");
-        }
-      }, 500);
-    },
-  },
+  methods: {},
   mounted() {
     // document.getElementById("app").style.display = "block";
-
     // this.showProgress();
-
     // document.getElementById("appLoading").style.display = "none";
   },
 };
