@@ -3,33 +3,26 @@
     {{ city }} {{ area }}&ensp;
     <i
       class="el-icon-refresh"
-      @click="getIPCity"
+      @click="Tianqi('查询')"
       title="重新查询"
       v-show="!show"
     ></i>
     <i class="el-icon-loading" v-show="show"></i>
     <br />
     <br />
-    天气：{{ this.tianqi.wea }}
-    <br />
-    温度：{{ this.tianqi.tem }}
-    <br />
-    白天温度：{{ this.tianqi.tem_day }}
-    <br />
-    晚上温度：{{ this.tianqi.tem_night }}
-    <br />
-    湿度：{{ this.tianqi.humidity }}
-    <br />
-    空气质量：{{ this.tianqi.air }}
-    <br />
-    压力：{{ this.tianqi.pressure }}
-
-    <br />
-    风向：{{ this.tianqi.win }}
-    <br />
-    风速：{{ this.tianqi.win_meter }}
-    <br />
-    风级：{{ this.tianqi.win_speed }}
+    <div class="gn" v-if="status == true">
+      {{ tianqi.data.type || "" }} {{ tianqi.data.fengxiang || "" }}
+      {{ tianqi.data.fengli || "" }} {{ tianqi.data.low || "" }}~{{
+        tianqi.data.high || ""
+      }}
+      <div>
+        <br />
+        {{ tianqi.tip || "" }}
+      </div>
+    </div>
+    <div class="gw" v-else>
+      <el-tag type="warning"> {{ message }}</el-tag>
+    </div>
   </div>
 </template>
 
@@ -43,15 +36,29 @@ export default {
       area: "", // 区
       show: false,
       tianqi: {},
+      status: true,
+      message: "",
     };
   },
   methods: {
     // 查询天气
-    Tianqi(city) {
-      Tianqi(city).then((res) => {
-        // console.log(res.data, "天气");
-        this.tianqi = res.data;
+    Tianqi(val) {
+      Tianqi(this.Ip).then((res) => {
+        if (!res.data.success) {
+          this.status = false;
+          this.message = res.data.message;
+        } else {
+          this.status = true;
+          this.tianqi = res.data;
+        }
         this.show = false;
+        if (val) {
+          this.$notify({
+            title: "成功",
+            message: "查询成功",
+            type: "success",
+          });
+        }
       });
     },
     // 获取ip所在城市、区等信息
@@ -68,15 +75,18 @@ export default {
           // console.log("IP所在市", res.result.ad_info.city);
           // console.log("ip所属区", res.result.ad_info.district);
           if (res.result.ad_info.city.length == 3) {
-            let city = res.result.ad_info.city.slice(
-              0,
-              res.result.ad_info.city.length - 1
-            );
-            this.Tianqi(city);
+            // let city = res.result.ad_info.city.slice(
+            //   0,
+            //   res.result.ad_info.city.length - 1
+            // );
+            // this.Tianqi(city);
           }
           this.city = res.result.ad_info.city;
           this.area = res.result.ad_info.district;
 
+          console.log("🚀 ~ .then ~ res:", res);
+          this.Ip = res.result.ip;
+          this.Tianqi();
           return res;
         })
         .catch((error) => {

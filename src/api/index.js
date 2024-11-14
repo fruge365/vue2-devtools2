@@ -1,7 +1,7 @@
 import request from "@/utils/request";
 import request1 from "@/utils/request1";
 // import request2 from "@/utils/request2";
-import request3 from "@/utils/request3";
+// import request3 from "@/utils/request3";
 import request4 from "@/utils/request4";
 import request5 from "@/utils/request5";
 // 百度热搜
@@ -21,9 +21,10 @@ export const baiDuHot1 = () => {
 };
 
 // 天气查询
-export const Tianqi = (city) => {
-  return request3({
-    url: `/free/day?appid=23035354&appsecret=8YvlPNrz&city=` + encodeURI(city),
+export const Tianqi = (IP) => {
+  return request4({
+    url: `/weather?ip=${IP}`,
+
     method: "get",
   });
 };
@@ -41,7 +42,7 @@ export const Tqimg = () => {
 // 微博热搜 VVHAN
 export const wbhot = () => {
   return request4({
-    url: `/wbhot`,
+    url: `/hotlist/wbHot`,
     method: "get",
   });
 };

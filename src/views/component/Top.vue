@@ -8,31 +8,28 @@
     <div class="right" @click="dialogVisible = true">
       <!-- <i class="icon el-icon-s-operation" title="设置" @click="FitFn()"></i>
       <i class="icon el-icon-full-screen" title="全屏" v-screenfull></i> -->
-      <img
-        src="http://www.amoureux555.xyz/%E5%A4%B4%E5%83%8F.jpg"
-        alt=""
-        srcset=""
-      />
+      <img :src="require('@/assets/avatar.png')" alt="" srcset="" />
       &emsp; 我要联系网站作者
     </div>
     <el-dialog
       title="扫码联系网站作者"
       :visible.sync="dialogVisible"
       width="40%"
-      :close-on-click-modal="false"
     >
+      <!-- :close-on-click-modal="false" -->
+
       <img
-        src="http://www.amoureux555.xyz/%E5%BE%AE%E4%BF%A1.png"
+        :src="require('@/assets/微信.png')"
         alt=""
-        srcset=""
         width="60%"
         height="60%"
       />
-      <span slot="footer" class="dialog-footer">
+
+      <!-- <span slot="footer" class="dialog-footer">
         <el-button type="primary" @click="dialogVisible = false"
-          >确 定</el-button
+          >关 闭</el-button
         >
-      </span>
+      </span> -->
     </el-dialog>
   </div>
 </template>

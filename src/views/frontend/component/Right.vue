@@ -181,11 +181,7 @@
     <!-- 个人 -->
     <el-card class="box-card tuiguang" shadow="hover">
       <div class="text item">
-        <img
-          src="http://www.amoureux555.xyz/%E6%89%AB%E7%A0%81_%E6%90%9C%E7%B4%A2%E8%81%94%E5%90%88%E4%BC%A0%E6%92%AD%E6%A0%B7%E5%BC%8F-%E7%99%BD%E8%89%B2%E7%89%88.webp"
-          alt=""
-          class="search-image"
-        />
+        <img :src="require('@/assets/tg1.png')" alt="" class="search-image" />
       </div>
     </el-card>
   </div>
@@ -226,7 +222,7 @@ export default {
     async wbhot() {
       await wbhot().then((res) => {
         // this.weiboHOT = this.weiboHOTOne = res.data.data.realtime;
-        // console.log(res.data.data);
+        // console.log(res.data.data, "微博热搜");
         this.weiboHOT = res.data.data;
       });
     },
@@ -341,13 +337,16 @@ export default {
 }
 
 .tuiguang {
-  height: 96px;
+  // height: 96px;
+  border: none;
   ::v-deep .el-card__body {
     padding: 0;
     div {
       img {
-        width: 100%;
-        height: 100%;
+        // width: 100%;
+        // height: 100%;
+        width: 312px;
+        height: 114px;
       }
     }
   }

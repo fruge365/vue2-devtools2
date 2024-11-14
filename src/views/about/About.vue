@@ -27,7 +27,7 @@
           </h3>
         </div>
       </el-card>
-      <el-card class="about2" shadow="never">
+      <!-- <el-card class="about2" shadow="never">
         <div slot="header" class="clearfix">
           <span>
             <img
@@ -48,7 +48,7 @@
             </div>
           </ul>
         </div>
-      </el-card>
+      </el-card> -->
     </div>
     <el-card class="bottom" shadow="never">
       <!-- <div slot="header" class="clearfix">
@@ -71,7 +71,7 @@
           </div>
           <div class="right">
             <img
-              src="http://www.amoureux555.xyz/%E8%B5%9E%E8%B5%8F%E7%A0%81.jpg"
+              :src="require('@/assets/zs2.jpg')"
               alt="投喂amoureux555"
               srcset=""
             />
@@ -125,7 +125,7 @@ export default {
   margin-bottom: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  // justify-content: center;
   align-items: center;
   .top {
     // background-color: red;
@@ -134,10 +134,11 @@ export default {
     justify-content: center;
     align-items: flex-start;
     margin-bottom: 80px;
+    width: 73%;
     ::v-deep .about1 {
-      width: 55%;
-      padding-bottom: 30px;
-      margin-right: 20px;
+      width: 100%;
+      padding-bottom: 20px;
+      // margin-right: 20px;
       .clearfix {
         text-align: left;
         span {

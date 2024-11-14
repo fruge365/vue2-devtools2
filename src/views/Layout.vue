@@ -1,7 +1,8 @@
 <template>
   <div class="layout">
     <Menu />
-    <div class="main"><Top /> <router-view /></div>
+    <div class="main">
+      <Top /> <router-view /></div>
     <BackTop />
     <!-- <ChatGpt /> -->
   </div>

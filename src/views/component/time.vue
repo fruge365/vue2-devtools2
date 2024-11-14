@@ -3,6 +3,7 @@
     <!-- 时间start -->
     <div class="title">
       <span class="time">{{ gettime }}</span>
+      <br />
       <span class="date">{{ getdate }}</span>
     </div>
     <!-- 时间end -->
