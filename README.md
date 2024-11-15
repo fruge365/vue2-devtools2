@@ -1,7 +1,10 @@
 # devtools
 ## 工具箱 基于vue2发开,写的不好大佬轻点喷,欢迎指点
 
+![Image text](./src/assets/v2.1.17-1.jpg)
+
 ![Image text](./src/assets/v2.1.17.png)
+
 
 ## Project setup
 

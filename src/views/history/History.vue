@@ -412,6 +412,21 @@ export default {
         },
         {
           //更新时间
+          timestamp: "2023-11-15",
+          name: "版本更新",
+          // 版本号
+          version: "v2.1.18",
+          // 标题
+          title: "优化",
+          // 更新内容
+          content: [
+            {
+              sub: "增加首页摸鱼人日历",
+            },
+          ],
+        },
+        {
+          //更新时间
           timestamp: "xxxx-xx-xx",
           name: "Amoureux555.xyz",
           // 版本号

@@ -3,7 +3,7 @@ import axios from "axios";
 
 const request4 = axios.create({
   baseURL: process.env.VUE_APP_VVHAN,
-  timeout: 5000,
+  timeout: 20000,
 });
 
 export default request4;

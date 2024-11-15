@@ -36,7 +36,7 @@ export default {
       area: "", // 区
       show: false,
       tianqi: {},
-      status: true,
+      status: null,
       message: "",
     };
   },

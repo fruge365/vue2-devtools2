@@ -11,6 +11,8 @@ import "element-ui/lib/theme-chalk/index.css";
 // 解决滚动条滚动bug
 ElementUI.Dialog.props.lockScroll.default = false;
 Vue.use(ElementUI);
+// 引入element组件
+
 // 引入阿里字体库
 import "../public/font/iconfont.css";
 // 引入全局样式

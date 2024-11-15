@@ -24,7 +24,6 @@ export const baiDuHot1 = () => {
 export const Tianqi = (IP) => {
   return request4({
     url: `/weather?ip=${IP}`,
-
     method: "get",
   });
 };
@@ -44,6 +43,15 @@ export const wbhot = () => {
   return request4({
     url: `/hotlist/wbHot`,
     method: "get",
+  });
+};
+
+// 摸鱼人日历
+export const moyu = () => {
+  return request4({
+    url: `/moyu`,
+    method: "get",
+    responseType: "blob",
   });
 };
 
